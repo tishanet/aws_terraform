@@ -6,4 +6,8 @@ resource "aws_instance" "web-rhel" {
     volume_type           = "gp2"
   }
   subnet_id = aws_subnet.web_subnet.id
+  tags = {
+      name = "web-rhel"
+  }
+  vpc_security_group_ids = [ "sg-0ee7859daf81997fc" ]
 }
